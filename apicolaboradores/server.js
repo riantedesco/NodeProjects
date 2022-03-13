@@ -22,4 +22,8 @@ MongoClient.connect(uri, (err, client) => {
 // prerarar para responder ao GET
 app.get('/', (req, res) => {
     res.send('Atendida a requisição GET!!');
-   }); 
+}); 
+
+//rotas para colaboradores
+const colaboradores = require('./colaboradores');
+colaboradores(app);
