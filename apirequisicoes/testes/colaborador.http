@@ -4,86 +4,67 @@ Content-Type: application/json
 ###
 
 
-# Inserir novo usuário
+# Inserir novo colaborador
 POST http://localhost:3000/api/colaboradores
 Content-Type: application/json
 
 {
- "nome": "Jaqson Dalbosco", "email": "jaqson@upf.br",
- "celular": "99999-9999", "senha": "123",
- "dataHoraCad": "2021-01-25T17:32:25.000Z"
+ "nome": "Jaqson Dalbosco",
+ "email": "jaqson@upf.br",
+ "senha": "123"
 }
 ###
 
 
-# Alterar usuário
+# Alterar colaborador
 PUT http://localhost:3000/api/colaboradores
 Content-Type: application/json
 
 {
  "_id": "5f6cba8798eca62ccce84ba7",
  "nome": "Jaqson alterado",
- "email": "jaqson@teste.com",
- "celular": "54 6543 2423"
+ "email": "jaqson@teste.com"
 }
 ###
 
 
-# Excluir um usuário
+# Excluir um colaborador
 DELETE http://localhost:3000/api/colaboradores/5f6cba8798eca62ccce84ba7
 Content-Type: application/json
 ###
 
 
-# Obter pelo id de usuário
+# Obter pelo id de colaborador
 GET http://localhost:3000/api/colaboradores/5f6cba8798eca62ccce84ba7
 Content-Type: application/json
 ###
 
 
-# Obter usuários filtrando
+# Obter colaboradores filtrando
 GET http://localhost:3000/api/colaboradores/filtro/alterado
 Content-Type: application/json
 ###
 
 
-# Usuário sem nome requerido.
-POST http://localhost:3000/api/localhost:3000/api/colaboradores
+# Colaborador sem nome requerido.
+POST http://localhost:3000/api/colaboradores
 Content-Type: application/json
 
 {
  "nome": "",
  "email": "jaqson@upf.br",
- "celular": "99999-9999",
- "senha": "123",
- "dataHoraCad": "2021-01-25T17:32:25.000Z"
+ "senha": "123"
 }
 ###
 
 
-# Usuário com email duplicado.
+# Colaborador com email duplicado.
 POST http://localhost:3000/api/colaboradores
 Content-Type: application/json
 
 {
  "nome": "Jaqson",
  "email": "jaqson@upf.br",
- "celular": "99999-9999",
- "senha": "123",
- "dataHoraCad": "2021-01-25T17:32:25.000Z"
-}
-###
-
-
-# Usuário com data inválida
-POST http://localhost:3000/api/colaboradores
-Content-Type: application/json
-
-{
- "nome": "Jaqson",
- "email": "jaqson.outro@upf.br",
- "celular": "99999-9999",
- "senha": "123",
- "dataHoraCad": "2021-20-25T17:32:25.000Z"
+ "senha": "123"
 }
 ###

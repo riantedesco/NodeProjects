@@ -1,0 +1,67 @@
+# Obter a lista de requisicoes
+GET http://localhost:3000/api/requisicoes
+Content-Type: application/json
+###
+
+
+# Inserir nova requisicao
+POST http://localhost:3000/api/requisicoes
+Content-Type: application/json
+
+{
+ "titulo": "Requisicao 1",
+ "descricao": "Descricao da requisicao 1",
+ "status": "Aguardando",
+ "prazoAtendimento": "2021-01-25T17:32:25.000Z",
+ "tipoRequisicao": "5f6cba8798eca62ccce84ba7",
+ "solicitante": "5f6cba8798eca62ccce84ba7"
+}
+###
+
+
+# Alterar requisicao
+PUT http://localhost:3000/api/requisicoes
+Content-Type: application/json
+
+{
+ "_id": "5f6cba8798eca62ccce84ba7",
+ "titulo": "Requisicao 1",
+ "descricao": "Descricao da requisicao 1",
+ "status": "Aguardando",
+ "prazoAtendimento": "2021-01-25T17:32:25.000Z"
+}
+###
+
+
+# Excluir uma requisicao
+DELETE http://localhost:3000/api/requisicoes/5f6cba8798eca62ccce84ba7
+Content-Type: application/json
+###
+
+
+# Obter pelo id de requisicao
+GET http://localhost:3000/api/requisicoes/5f6cba8798eca62ccce84ba7
+Content-Type: application/json
+###
+
+
+# Obter requisicoes filtrando
+GET http://localhost:3000/api/requisicoes/filtro/alterado
+Content-Type: application/json
+###
+
+
+# Requisicao com data inválida
+POST http://localhost:3000/api/requisicoes
+Content-Type: application/json
+
+{
+ "titulo": "Requisicao 1",
+ "descricao": "Descricao da requisicao 1",
+ "dataHoraCriada": "2021-01-25T17:32:25.000Z",
+ "status": "Aguardando",
+ "prazoAtendimento": "2021-01-25T17:32:25.000Z",
+ "tipoRequisicao": "5f6cba8798eca62ccce84ba7",
+ "solicitante": "5f6cba8798eca62ccce84ba7"
+}
+###

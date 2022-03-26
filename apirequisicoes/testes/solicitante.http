@@ -1,0 +1,46 @@
+# Obter a lista de solicitantes
+GET http://localhost:3000/api/solicitantes
+Content-Type: application/json
+###
+
+
+# Inserir novo solicitante
+POST http://localhost:3000/api/solicitantes
+Content-Type: application/json
+
+{
+ "nome": "Jaqson Dalbosco",
+ "email": "jaqson@upf.br",
+ "senha": "123"
+}
+###
+
+
+# Alterar solicitante
+PUT http://localhost:3000/api/solicitantes
+Content-Type: application/json
+
+{
+ "_id": "5f6cba8798eca62ccce84ba7",
+ "nome": "Jaqson alterado",
+ "email": "jaqson@teste.com"
+}
+###
+
+
+# Excluir um solicitante
+DELETE http://localhost:3000/api/solicitantes/5f6cba8798eca62ccce84ba7
+Content-Type: application/json
+###
+
+
+# Obter pelo id de solicitante
+GET http://localhost:3000/api/solicitantes/5f6cba8798eca62ccce84ba7
+Content-Type: application/json
+###
+
+
+# Obter solicitantes filtrando
+GET http://localhost:3000/api/solicitantes/filtro/alterado
+Content-Type: application/json
+###

@@ -1,0 +1,55 @@
+# Obter a lista de atividades
+GET http://localhost:3000/api/atividades
+Content-Type: application/json
+###
+
+
+# Inserir nova atividade
+POST http://localhost:3000/api/atividades
+Content-Type: application/json
+
+{
+ "titulo": "Requisicao 1",
+ "descricao": "Descricao da requisicao 1",
+ "status": "Aguardando",
+ "prazo": "2021-01-25T17:32:25.000Z",
+ "agendaInicio": "2021-01-25T17:32:25.000Z",
+ "dataHoraTermino": "2021-01-25T17:32:25.000Z",
+ "requisicao": "5f6cba8798eca62ccce84ba7",
+ "colaborador": "5f6cba8798eca62ccce84ba7"
+}
+###
+
+
+# Alterar atividade
+PUT http://localhost:3000/api/atividades
+Content-Type: application/json
+
+{
+ "_id": "5f6cba8798eca62ccce84ba7",
+ "titulo": "Requisicao 1",
+ "descricao": "Descricao da requisicao 1",
+ "status": "Aguardando",
+ "prazo": "2021-01-25T17:32:25.000Z",
+ "agendaInicio": "2021-01-25T17:32:25.000Z",
+ "dataHoraTermino": "2021-01-25T17:32:25.000Z"
+}
+###
+
+
+# Excluir uma atividade
+DELETE http://localhost:3000/api/atividades/5f6cba8798eca62ccce84ba7
+Content-Type: application/json
+###
+
+
+# Obter pelo id de atividade
+GET http://localhost:3000/api/atividades/5f6cba8798eca62ccce84ba7
+Content-Type: application/json
+###
+
+
+# Obter atividades filtrando
+GET http://localhost:3000/api/atividades/filtro/alterado
+Content-Type: application/json
+###
