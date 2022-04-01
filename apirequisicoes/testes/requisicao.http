@@ -1,11 +1,11 @@
 # Obter a lista de requisicoes
-GET http://localhost:3000/api/requisicoes
+GET http://localhost:5000/api/requisicoes
 Content-Type: application/json
 ###
 
 
 # Inserir nova requisicao
-POST http://localhost:3000/api/requisicoes
+POST http://localhost:5000/api/requisicoes
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ Content-Type: application/json
 
 
 # Alterar requisicao
-PUT http://localhost:3000/api/requisicoes
+PUT http://localhost:5000/api/requisicoes
 Content-Type: application/json
 
 {
@@ -34,25 +34,25 @@ Content-Type: application/json
 
 
 # Excluir uma requisicao
-DELETE http://localhost:3000/api/requisicoes/5f6cba8798eca62ccce84ba7
+DELETE http://localhost:5000/api/requisicoes/5f6cba8798eca62ccce84ba7
 Content-Type: application/json
 ###
 
 
 # Obter pelo id de requisicao
-GET http://localhost:3000/api/requisicoes/5f6cba8798eca62ccce84ba7
+GET http://localhost:5000/api/requisicoes/5f6cba8798eca62ccce84ba7
 Content-Type: application/json
 ###
 
 
 # Obter requisicoes filtrando
-GET http://localhost:3000/api/requisicoes/filtro/alterado
+GET http://localhost:5000/api/requisicoes/filtro/alterado
 Content-Type: application/json
 ###
 
 
 # Requisicao com data inválida
-POST http://localhost:3000/api/requisicoes
+POST http://localhost:5000/api/requisicoes
 Content-Type: application/json
 
 {

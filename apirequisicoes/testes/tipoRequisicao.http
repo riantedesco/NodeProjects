@@ -1,11 +1,11 @@
 # Obter a lista de tipos de requisicao
-GET http://localhost:3000/api/tiposRequisicao
+GET http://localhost:5000/api/tiposRequisicao
 Content-Type: application/json
 ###
 
 
 # Inserir novo tipo de requisicao
-POST http://localhost:3000/api/tiposRequisicao
+POST http://localhost:5000/api/tiposRequisicao
 Content-Type: application/json
 
 {
@@ -15,29 +15,29 @@ Content-Type: application/json
 
 
 # Alterar tipo de requisicao
-PUT http://localhost:3000/api/tiposRequisicao
+PUT http://localhost:5000/api/tiposRequisicao
 Content-Type: application/json
 
 {
- "_id": "5f6cba8798eca62ccce84ba7",
+ "_id": "624782763de4296a7e54b75a",
  "descricao": "Tipo 2"
 }
 ###
 
 
 # Excluir um tipo de requisicao
-DELETE http://localhost:3000/api/tiposRequisicao/5f6cba8798eca62ccce84ba7
+DELETE http://localhost:5000/api/tiposRequisicao/624782763de4296a7e54b75a
 Content-Type: application/json
 ###
 
 
 # Obter pelo id de tipo de requisicao
-GET http://localhost:3000/api/tiposRequisicao/5f6cba8798eca62ccce84ba7
+GET http://localhost:5000/api/tiposRequisicao/624782763de4296a7e54b75a
 Content-Type: application/json
 ###
 
 
 # Obter tipos de requisicao filtrando
-GET http://localhost:3000/api/tiposRequisicao/filtro/alterado
+GET http://localhost:5000/api/tiposRequisicao/filtro/1
 Content-Type: application/json
 ###

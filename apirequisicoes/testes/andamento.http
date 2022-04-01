@@ -1,11 +1,11 @@
 # Obter a lista de andamentos
-GET http://localhost:3000/api/andamentos
+GET http://localhost:5000/api/andamentos
 Content-Type: application/json
 ###
 
 
 # Inserir novo andamento
-POST http://localhost:3000/api/andamentos
+POST http://localhost:5000/api/andamentos
 Content-Type: application/json
 
 {
@@ -19,38 +19,38 @@ Content-Type: application/json
 
 
 # Alterar andamento
-PUT http://localhost:3000/api/andamentos
+PUT http://localhost:5000/api/andamentos
 Content-Type: application/json
 
 {
- "_id": "5f6cba8798eca62ccce84ba7",
+ "_id": "6247851b8490d14dd8923e00",
  "dataHora": "2021-01-25T17:32:25.000Z",
- "titulo": "Requisicao 1",
- "descricao": "Descricao da requisicao 1",
+ "titulo": "Requisicao 2",
+ "descricao": "Descricao da requisicao 1"
 }
 ###
 
 
 # Excluir uma andamento
-DELETE http://localhost:3000/api/andamentos/5f6cba8798eca62ccce84ba7
+DELETE http://localhost:5000/api/andamentos/5f6cba8798eca62ccce84ba7
 Content-Type: application/json
 ###
 
 
 # Obter pelo id de andamento
-GET http://localhost:3000/api/andamentos/5f6cba8798eca62ccce84ba7
+GET http://localhost:5000/api/andamentos/5f6cba8798eca62ccce84ba7
 Content-Type: application/json
 ###
 
 
 # Obter andamentos filtrando
-GET http://localhost:3000/api/andamentos/filtro/alterado
+GET http://localhost:5000/api/andamentos/filtro/alterado
 Content-Type: application/json
 ###
 
 
 # Andamento com data inválida
-POST http://localhost:3000/api/andamentos
+POST http://localhost:5000/api/andamentos
 Content-Type: application/json
 
 {

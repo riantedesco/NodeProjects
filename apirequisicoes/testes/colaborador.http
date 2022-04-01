@@ -1,27 +1,27 @@
 # Obter a lista de colaboradores
-GET http://localhost:3000/api/colaboradores
+GET http://localhost:5000/api/colaboradores
 Content-Type: application/json
 ###
 
 
 # Inserir novo colaborador
-POST http://localhost:3000/api/colaboradores
+POST http://localhost:5000/api/colaboradores
 Content-Type: application/json
 
 {
- "nome": "Jaqson Dalbosco",
- "email": "jaqson@upf.br",
+ "nome": "Rian Tedesco",
+ "email": "rian@upf.br",
  "senha": "123"
 }
 ###
 
 
 # Alterar colaborador
-PUT http://localhost:3000/api/colaboradores
+PUT http://localhost:5000/api/colaboradores
 Content-Type: application/json
 
 {
- "_id": "5f6cba8798eca62ccce84ba7",
+ "_id": "623526a2042f9a3f225e5fe0",
  "nome": "Jaqson alterado",
  "email": "jaqson@teste.com"
 }
@@ -29,25 +29,25 @@ Content-Type: application/json
 
 
 # Excluir um colaborador
-DELETE http://localhost:3000/api/colaboradores/5f6cba8798eca62ccce84ba7
+DELETE http://localhost:5000/api/colaboradores/623526a2042f9a3f225e5fe0
 Content-Type: application/json
 ###
 
 
 # Obter pelo id de colaborador
-GET http://localhost:3000/api/colaboradores/5f6cba8798eca62ccce84ba7
+GET http://localhost:5000/api/colaboradores/623526a2042f9a3f225e5fe0
 Content-Type: application/json
 ###
 
 
 # Obter colaboradores filtrando
-GET http://localhost:3000/api/colaboradores/filtro/alterado
+GET http://localhost:5000/api/colaboradores/filtro/alterado
 Content-Type: application/json
 ###
 
 
 # Colaborador sem nome requerido.
-POST http://localhost:3000/api/colaboradores
+POST http://localhost:5000/api/colaboradores
 Content-Type: application/json
 
 {
@@ -59,7 +59,7 @@ Content-Type: application/json
 
 
 # Colaborador com email duplicado.
-POST http://localhost:3000/api/colaboradores
+POST http://localhost:5000/api/colaboradores
 Content-Type: application/json
 
 {

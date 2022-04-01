@@ -36,7 +36,7 @@ module.exports = {
     },
     
     filtrar: async (req, res) => {
-       await TipoRequisicao.find({
+        TipoRequisicao.find({
             $or: [
                 { descricao: { $regex: req.params.filtro, $options: "i" } },
             ],

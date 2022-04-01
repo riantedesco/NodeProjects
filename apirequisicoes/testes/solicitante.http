@@ -1,11 +1,11 @@
 # Obter a lista de solicitantes
-GET http://localhost:3000/api/solicitantes
+GET http://localhost:5000/api/solicitantes
 Content-Type: application/json
 ###
 
 
 # Inserir novo solicitante
-POST http://localhost:3000/api/solicitantes
+POST http://localhost:5000/api/solicitantes
 Content-Type: application/json
 
 {
@@ -17,7 +17,7 @@ Content-Type: application/json
 
 
 # Alterar solicitante
-PUT http://localhost:3000/api/solicitantes
+PUT http://localhost:5000/api/solicitantes
 Content-Type: application/json
 
 {
@@ -29,18 +29,18 @@ Content-Type: application/json
 
 
 # Excluir um solicitante
-DELETE http://localhost:3000/api/solicitantes/5f6cba8798eca62ccce84ba7
+DELETE http://localhost:5000/api/solicitantes/5f6cba8798eca62ccce84ba7
 Content-Type: application/json
 ###
 
 
 # Obter pelo id de solicitante
-GET http://localhost:3000/api/solicitantes/5f6cba8798eca62ccce84ba7
+GET http://localhost:5000/api/solicitantes/5f6cba8798eca62ccce84ba7
 Content-Type: application/json
 ###
 
 
 # Obter solicitantes filtrando
-GET http://localhost:3000/api/solicitantes/filtro/alterado
+GET http://localhost:5000/api/solicitantes/filtro/alterado
 Content-Type: application/json
 ###
