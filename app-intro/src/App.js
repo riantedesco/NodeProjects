@@ -1,12 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import Example from './Example';
+import Usuarios from './Usuario';
 
 function App() {
   return (
     <div className="App">
-      <h4>Manter Usuários</h4>
+      <Example />
+      <Usuarios />
     </div>
   );
 }
- 
+
 export default App;
