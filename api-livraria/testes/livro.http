@@ -1,0 +1,53 @@
+# Obter a lista de livros
+GET http://localhost:5000/api/livros
+Content-Type: application/json
+###
+
+
+# Inserir novo livro
+POST http://localhost:5000/api/livros
+Content-Type: application/json
+
+{
+ "titulo": "Dois amores e uma maçã",
+ "dataLancamento": "2020-01-30T00:00:00.000Z",
+ "classificacao": 12,
+ "genero": "Drama",
+ "autor": "Maria das Rosas",
+ "editora": "Editora Livromor"
+}
+###
+
+
+# Alterar livro
+PUT http://localhost:5000/api/livros
+Content-Type: application/json
+
+{
+ "_id": "624782763de4296a7e54b75a",
+ "titulo": "Dois amores e uma ameixa",
+ "dataLancamento": "2020-01-30T00:00:00.000Z",
+ "classificacao": 12,
+ "genero": "Drama",
+ "autor": "Maria das Rosas",
+ "editora": "Editora Livromor"
+}
+###
+
+
+# Excluir um livro
+DELETE http://localhost:5000/api/livros/624782763de4296a7e54b75a
+Content-Type: application/json
+###
+
+
+# Obter pelo id de livro
+GET http://localhost:5000/api/livros/624782763de4296a7e54b75a
+Content-Type: application/json
+###
+
+
+# Obter livros filtrando
+GET http://localhost:5000/api/livros/filtro/amores
+Content-Type: application/json
+###
