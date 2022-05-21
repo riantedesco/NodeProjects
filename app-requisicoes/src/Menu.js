@@ -15,6 +15,22 @@ function Menu() {
                 {
                     label: 'Colaboradores', icon: 'pi pi-id-card',
                     command: () => { navigate("/colaborador") }
+                },
+                {
+                    label: 'Solicitantes', icon: 'pi pi-id-card',
+                    command: () => { navigate("/solicitante") }
+                },
+                {
+                    label: 'Tipos de Requisição', icon: 'pi pi-id-card',
+                    command: () => { navigate("/tipoRequisicao") }
+                },
+                {
+                    label: 'Requisição', icon: 'pi pi-id-card',
+                    command: () => { navigate("/requisicao") }
+                },
+                {
+                    label: 'Atividade', icon: 'pi pi-id-card',
+                    command: () => { navigate("/atividade") }
                 }
             ]
         },

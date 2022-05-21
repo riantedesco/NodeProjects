@@ -1,10 +1,17 @@
 import "./App.css";
+import "primereact/resources/themes/saga-blue/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Menu from './Menu';
 
 const Home = lazy(() => import('./pages/home/Home'));
 const ColaboradorCon = lazy(() => import('./pages/colaborador/ColaboradorCon'));
+const SolicitanteCon = lazy(() => import('./pages/solicitante/SolicitanteCon'));
+const TipoRequisicaoCon = lazy(() => import('./pages/tipoRequisicao/TipoRequisicaoCon'));
+const RequisicaoCon = lazy(() => import('./pages/requisicao/RequisicaoCon'));
+const AtividadeCon = lazy(() => import('./pages/atividade/AtividadeCon'));
 
 function App() {
   return (
@@ -14,6 +21,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/colaborador" element={<ColaboradorCon/>}/>
+          <Route path="/solicitante" element={<SolicitanteCon/>}/>
+          <Route path="/tipoRequisicao" element={<TipoRequisicaoCon/>}/>
+          <Route path="/requisicao" element={<RequisicaoCon/>}/>
+          <Route path="/atividade" element={<AtividadeCon/>}/>
+          
         </Routes>
       </Suspense>
     </BrowserRouter>

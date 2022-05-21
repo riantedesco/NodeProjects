@@ -10,12 +10,12 @@ const AtividadeSchema = new mongoose.Schema({
     requisicao: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Requisicao',
-        require: true,
+        //require: true,
     },
     colaborador: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Colaborador',
-        require: true,
+        //require: true,
     },
 });
 
