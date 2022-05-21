@@ -2,7 +2,6 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 
 const TipoRequisicaoList = (props) => {
-
   const operacoesBodyTemplate = (rowData) => {
     return (
       <>
@@ -40,4 +39,5 @@ const TipoRequisicaoList = (props) => {
     </div>
   );
 };
+
 export default TipoRequisicaoList;

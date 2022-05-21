@@ -2,7 +2,7 @@ const express = require('express');
 const routes = express.Router();
 const controle = require('../controller/TipoRequisicaoController');
 
-// todos os endpoints de colaborador
+// todos os endpoints de tipo de requisição
 routes.route('/tiposRequisicao').get(controle.listar);
 routes.route('/tiposRequisicao').post(controle.incluir);
 routes.route('/tiposRequisicao').put(controle.alterar);

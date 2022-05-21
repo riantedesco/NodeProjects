@@ -1,9 +1,11 @@
 import React from "react";
+
 const TipoRequisicaoForm = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     props.setTipoRequisicao({ ...props.tipoRequisicao, [name]: value });
   };
+  
   return (
     <form>
       <div class="form-group">
@@ -35,4 +37,5 @@ const TipoRequisicaoForm = (props) => {
     </form>
   );
 };
+
 export default TipoRequisicaoForm;

@@ -2,7 +2,7 @@ const express = require('express');
 const routes = express.Router();
 const controle = require('../controller/AndamentoController');
 
-// todos os endpoints de colaborador
+// todos os endpoints de andamento
 routes.route('/andamentos').get(controle.listar);
 routes.route('/andamentos').post(controle.incluir);
 routes.route('/andamentos').put(controle.alterar);

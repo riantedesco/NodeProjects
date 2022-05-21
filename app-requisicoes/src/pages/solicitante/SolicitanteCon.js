@@ -9,8 +9,6 @@ import "primeicons/primeicons.css";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
-
-
 function SolicitanteCon() {
   const [solicitantes, setSolicitantes] = useState([]);
   const initialState = { id: null, nome: "", email: "", senha: "" };
@@ -158,4 +156,5 @@ function SolicitanteCon() {
   }
 
 }
+
 export default SolicitanteCon;

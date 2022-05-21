@@ -2,7 +2,6 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 
 const ColaboradorList = (props) => {
-
   const operacoesBodyTemplate = (rowData) => {
     return (
       <>
@@ -41,4 +40,5 @@ const ColaboradorList = (props) => {
     </div>
   );
 };
+
 export default ColaboradorList;

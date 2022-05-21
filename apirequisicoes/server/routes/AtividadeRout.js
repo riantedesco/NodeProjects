@@ -2,7 +2,7 @@ const express = require('express');
 const routes = express.Router();
 const controle = require('../controller/AtividadeController');
 
-// todos os endpoints de colaborador
+// todos os endpoints de atividade
 routes.route('/atividades').get(controle.listar);
 routes.route('/atividades').post(controle.incluir);
 routes.route('/atividades').put(controle.alterar);

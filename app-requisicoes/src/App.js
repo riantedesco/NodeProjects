@@ -12,6 +12,7 @@ const SolicitanteCon = lazy(() => import('./pages/solicitante/SolicitanteCon'));
 const TipoRequisicaoCon = lazy(() => import('./pages/tipoRequisicao/TipoRequisicaoCon'));
 const RequisicaoCon = lazy(() => import('./pages/requisicao/RequisicaoCon'));
 const AtividadeCon = lazy(() => import('./pages/atividade/AtividadeCon'));
+const AndamentoCon = lazy(() => import('./pages/andamento/AndamentoCon'));
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route path="/tipoRequisicao" element={<TipoRequisicaoCon/>}/>
           <Route path="/requisicao" element={<RequisicaoCon/>}/>
           <Route path="/atividade" element={<AtividadeCon/>}/>
-          
+          <Route path="/andamento" element={<AndamentoCon/>}/>
         </Routes>
       </Suspense>
     </BrowserRouter>

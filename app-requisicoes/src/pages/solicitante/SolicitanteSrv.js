@@ -1,4 +1,5 @@
 import axios from "../../services/axios-common";
+
 class SolicitanteSrv {
   url = "/solicitantes";
   async listar() {
@@ -32,4 +33,5 @@ class SolicitanteSrv {
     });
   }
 }
+
 export default new SolicitanteSrv();

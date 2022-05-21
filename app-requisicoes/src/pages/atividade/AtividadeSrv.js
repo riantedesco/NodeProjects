@@ -1,6 +1,7 @@
 import axios from "../../services/axios-common";
+
 class AtividadeSrv {
-  url = "/requisicoes";
+  url = "/atividades";
   async listar() {
     return await axios.get(this.url).catch((err) => {
       throw err;
@@ -32,4 +33,5 @@ class AtividadeSrv {
     });
   }
 }
+
 export default new AtividadeSrv();

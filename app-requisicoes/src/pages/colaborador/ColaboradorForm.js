@@ -1,9 +1,11 @@
 import React from "react";
+
 const ColaboradorForm = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     props.setColaborador({ ...props.colaborador, [name]: value });
   };
+  
   return (
     <form>
       <div class="form-group">
@@ -55,4 +57,5 @@ const ColaboradorForm = (props) => {
     </form>
   );
 };
+
 export default ColaboradorForm;

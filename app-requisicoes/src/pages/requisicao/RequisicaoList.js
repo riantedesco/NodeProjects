@@ -2,7 +2,6 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 
 const RequisicaoList = (props) => {
-
   const operacoesBodyTemplate = (rowData) => {
     return (
       <>
@@ -31,7 +30,7 @@ const RequisicaoList = (props) => {
       </button>
 
       <DataTable value={props.requisicoes} paginator paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown" currentPageReportTemplate="Mostrando de {first} até {last} de {totalRecords}" rows={5} rowsPerPageOptions={[5, 10, 20, 50]}
-        responsiveLayout="scroll" emptyMessage="Nenhum tipo de requisição encontrado"
+        responsiveLayout="scroll" emptyMessage="Nenhuma requisição encontrada"
         selectionMode="single" selection={props.requisicao} onSelectionChange={e => props.setRequisicao(e.value)} dataKey="_id">
         <Column field="_id" header="Id" sortable></Column>
         <Column field="titulo" header="Título" sortable filter></Column>
@@ -44,4 +43,5 @@ const RequisicaoList = (props) => {
     </div>
   );
 };
+
 export default RequisicaoList;

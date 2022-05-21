@@ -20,6 +20,3 @@ require("./server/banco/mongo");
 // usar as rotas
 const routes = require('./server/routes/index');
 app.use(routes);
-
-// usando variáveis de ambiente no projeto
-

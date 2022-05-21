@@ -9,8 +9,6 @@ import "primeicons/primeicons.css";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
-
-
 function TipoRequisicaoCon() {
   const [tiposRequisicao, setTiposRequisicao] = useState([]);
   const initialState = { id: null, descricao: "" };
@@ -158,4 +156,5 @@ function TipoRequisicaoCon() {
   }
 
 }
+
 export default TipoRequisicaoCon;

@@ -1,4 +1,5 @@
 import axios from "../../services/axios-common";
+
 class ColaboradorSrv {
   url = "/colaboradores";
   async listar() {
@@ -32,4 +33,5 @@ class ColaboradorSrv {
     });
   }
 }
+
 export default new ColaboradorSrv();

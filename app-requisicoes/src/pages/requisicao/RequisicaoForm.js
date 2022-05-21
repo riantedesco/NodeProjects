@@ -71,4 +71,5 @@ const RequisicaoForm = (props) => {
     </form>
   );
 };
+
 export default RequisicaoForm;

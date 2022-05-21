@@ -1,4 +1,5 @@
 import axios from "../../services/axios-common";
+
 class RequisicaoSrv {
   url = "/requisicoes";
   async listar() {
@@ -32,4 +33,5 @@ class RequisicaoSrv {
     });
   }
 }
+
 export default new RequisicaoSrv();

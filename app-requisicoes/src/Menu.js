@@ -31,6 +31,10 @@ function Menu() {
                 {
                     label: 'Atividade', icon: 'pi pi-id-card',
                     command: () => { navigate("/atividade") }
+                },
+                {
+                    label: 'Andamento', icon: 'pi pi-id-card',
+                    command: () => { navigate("/andamento") }
                 }
             ]
         },

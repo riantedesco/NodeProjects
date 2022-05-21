@@ -9,8 +9,6 @@ import "primeicons/primeicons.css";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
-
-
 function RequisicaoCon() {
   const [requisicoes, setRequisicoes] = useState([]);
   const initialState = { id: null, titulo: "", descricao: "", dataHoraCriada: "", status: "", prazoAtendimento: "" };
@@ -159,4 +157,5 @@ function RequisicaoCon() {
   }
 
 }
+
 export default RequisicaoCon;

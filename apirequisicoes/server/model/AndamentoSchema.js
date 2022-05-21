@@ -16,4 +16,4 @@ const AndamentoSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("AndamentoSchema", AndamentoSchema);
+module.exports = mongoose.model("Andamento", AndamentoSchema);

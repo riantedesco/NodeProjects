@@ -1,9 +1,11 @@
 import React from "react";
+
 const SolicitanteForm = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     props.setSolicitante({ ...props.solicitante, [name]: value });
   };
+  
   return (
     <form>
       <div class="form-group">
@@ -55,4 +57,5 @@ const SolicitanteForm = (props) => {
     </form>
   );
 };
+
 export default SolicitanteForm;

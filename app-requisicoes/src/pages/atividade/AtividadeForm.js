@@ -76,4 +76,5 @@ const AtividadeForm = (props) => {
     </form>
   );
 };
+
 export default AtividadeForm;

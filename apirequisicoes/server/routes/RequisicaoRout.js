@@ -2,7 +2,7 @@ const express = require('express');
 const routes = express.Router();
 const controle = require('../controller/RequisicaoController');
 
-// todos os endpoints de colaborador
+// todos os endpoints de requisição
 routes.route('/requisicoes').get(controle.listar);
 routes.route('/requisicoes').post(controle.incluir);
 routes.route('/requisicoes').put(controle.alterar);
