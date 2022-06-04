@@ -1,12 +1,18 @@
+@apiUrl = http://localhost:5000/api/solicitantes
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjlhOTczNWFhMjhjZmQwNjFjNmI4NTkiLCJub21lIjoiSmFxc29uIGFsdGVyYWRvIiwiaWF0IjoxNjU0MzAwMTc5LCJleHAiOjE2NTQzMDM3Nzl9.KqwInBnvY_dlGaK4tfeebxaq5cXEfVLgKYFufyEP7Ew
+
+
 # Obter a lista de solicitantes
-GET http://localhost:5000/api/solicitantes
+GET {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 
 # Inserir novo solicitante
-POST http://localhost:5000/api/solicitantes
+POST {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "nome": "Jaqson Dalbosco",
@@ -17,8 +23,9 @@ Content-Type: application/json
 
 
 # Alterar solicitante
-PUT http://localhost:5000/api/solicitantes
+PUT {{apiUrl}}
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "_id": "5f6cba8798eca62ccce84ba7",
@@ -29,18 +36,21 @@ Content-Type: application/json
 
 
 # Excluir um solicitante
-DELETE http://localhost:5000/api/solicitantes/5f6cba8798eca62ccce84ba7
+DELETE {{apiUrl}}/5f6cba8798eca62ccce84ba7
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 
 # Obter pelo id de solicitante
-GET http://localhost:5000/api/solicitantes/5f6cba8798eca62ccce84ba7
+GET {{apiUrl}}/5f6cba8798eca62ccce84ba7
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 
 # Obter solicitantes filtrando
-GET http://localhost:5000/api/solicitantes/filtro/alterado
+GET {{apiUrl}}/filtro/alterado
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###

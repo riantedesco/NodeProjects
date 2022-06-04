@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import TipoRequisicaoSrv from "../tipoRequisicao/TipoRequisicaoSrv";
 import { Calendar } from 'primereact/calendar';
 import { Dropdown } from 'primereact/dropdown';
 
@@ -13,7 +14,22 @@ const RequisicaoForm = (props) => {
     {label: 'Em andamento', value: 'Em Andamento'},
     {label: 'Cancelado', value: 'Cancelado'},
     {label: 'Concluído', value: 'Concluído'}
-];
+  ];
+
+  const [tiposRequisicao, setTiposRequisicao] = useState([]);
+
+  useEffect(() => {
+    onClickAtualizar(); // ao inicializar execula método para atualizar
+  }, []);
+
+  const onClickAtualizar = () => {
+    TipoRequisicaoSrv.listar().then((response) => {
+        setTiposRequisicao(response.data);
+      })
+      .catch((e) => {
+        console.log("Erro: " + e.message);
+      });
+  };
 
   return (
     <form>
@@ -52,6 +68,14 @@ const RequisicaoForm = (props) => {
         <br></br>
         <Calendar name="prazoAtendimento" value={props.requisicao.prazoAtendimento} onChange={handleInputChange}></Calendar>
       </div>
+      <div class="form-group">
+        <label>Tipo de Requisição</label>
+        <br></br>
+        <Dropdown name="tipoRequisicao" value={props.requisicao.tipoRequisicao} options={tiposRequisicao} 
+                  optionLabel="descricao" optionValue="_id"
+                  onChange={handleInputChange} placeholder="Selecione um tipo de requisição"/>
+      </div>
+
       <div class="form-group">
         <button
           type="button"
