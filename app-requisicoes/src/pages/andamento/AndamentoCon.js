@@ -91,7 +91,7 @@ function AndamentoCon() {
 
   const editar = (id) => {
     setAndamento(
-      andamentos.filter((andamento) => andamento._id == id)[0]
+      andamentos.filter((andamento) => andamento._id === id)[0]
     );
     setEditando(true);
   };

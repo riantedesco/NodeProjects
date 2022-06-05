@@ -90,7 +90,7 @@ function SolicitanteCon() {
 
   const editar = (id) => {
     setSolicitante(
-      solicitantes.filter((solicitante) => solicitante._id == id)[0]
+      solicitantes.filter((solicitante) => solicitante._id === id)[0]
     );
     setEditando(true);
   };

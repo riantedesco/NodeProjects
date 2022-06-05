@@ -1,0 +1,53 @@
+@apiUrl = http://localhost:5000/api/tiposRequisicao
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjlhOTczNWFhMjhjZmQwNjFjNmI4NTkiLCJub21lIjoiSmFxc29uIGFsdGVyYWRvIiwiaWF0IjoxNjU0MzAwMTc5LCJleHAiOjE2NTQzMDM3Nzl9.KqwInBnvY_dlGaK4tfeebxaq5cXEfVLgKYFufyEP7Ew
+
+
+# Obter a lista de tipos de requisicao
+GET {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+
+# Inserir novo tipo de requisicao
+POST {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "descricao": "tipo 1"
+}
+###
+
+
+# Alterar tipo de requisicao
+PUT {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "_id": "624782763de4296a7e54b75a",
+ "descricao": "Tipo 2"
+}
+###
+
+
+# Excluir um tipo de requisicao
+DELETE {{apiUrl}}/624782763de4296a7e54b75a
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+
+# Obter pelo id de tipo de requisicao
+GET {{apiUrl}}/628820914e22fd4375e77c6e
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+
+# Obter tipos de requisicao filtrando
+GET {{apiUrl}}/filtro/1
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###

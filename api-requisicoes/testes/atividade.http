@@ -1,0 +1,65 @@
+@apiUrl = http://localhost:5000/api/atividades
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjlhOTczNWFhMjhjZmQwNjFjNmI4NTkiLCJub21lIjoiSmFxc29uIGFsdGVyYWRvIiwiaWF0IjoxNjU0MzAwMTc5LCJleHAiOjE2NTQzMDM3Nzl9.KqwInBnvY_dlGaK4tfeebxaq5cXEfVLgKYFufyEP7Ew
+
+
+# Obter a lista de atividades
+GET {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+
+# Inserir nova atividade
+POST {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "titulo": "Requisicao dsfdfdsf",
+ "descricao": "Descricao da requisicao 1",
+ "status": "Aguardando",
+ "prazo": "2021-01-25T17:32:25.000Z",
+ "agendaInicio": "2021-01-25T17:32:25.000Z",
+ "dataHoraTermino": "2021-01-25T17:32:25.000Z",
+ "requisicao": "5f6cba8798eca62ccce84ba7",
+ "colaborador": "5f6cba8798eca62ccce84ba7"
+}
+###
+
+
+# Alterar atividade
+PUT {{apiUrl}}
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "_id": "5f6cba8798eca62ccce84ba7",
+ "titulo": "Requisicao 1",
+ "descricao": "Descricao da requisicao 1",
+ "status": "Aguardando",
+ "prazo": "2021-01-25T17:32:25.000Z",
+ "agendaInicio": "2021-01-25T17:32:25.000Z",
+ "dataHoraTermino": "2021-01-25T17:32:25.000Z"
+}
+###
+
+
+# Excluir uma atividade
+DELETE {{apiUrl}}/5f6cba8798eca62ccce84ba7
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+
+# Obter pelo id de atividade
+GET {{apiUrl}}/5f6cba8798eca62ccce84ba7
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+
+# Obter atividades filtrando
+GET {{apiUrl}}/filtro/alterado
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###

@@ -37,7 +37,8 @@ const RequisicaoList = (props) => {
         <Column field="descricao" header="Descrição" sortable filter></Column>
         <Column field="dataHoraCriada" header="Data Hora Criada" sortable filter></Column>
         <Column field="status" header="Status" sortable filter></Column>
-        <Column field="prazoAtendimento" header="Prazo de Atendimento" sortable filter></Column>
+        <Column field="tipoRequisicao" header="Tipo de Requisição" sortable filter></Column>
+        <Column field="solicitante" header="Solicitante" sortable filter></Column>
         <Column header="Operações" body={operacoesBodyTemplate}></Column>
       </DataTable>
     </div>

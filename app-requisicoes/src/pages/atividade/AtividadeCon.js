@@ -91,7 +91,7 @@ function AtividadeCon() {
 
   const editar = (id) => {
     setAtividade(
-      atividades.filter((atividade) => atividade._id == id)[0]
+      atividades.filter((atividade) => atividade._id === id)[0]
     );
     setEditando(true);
   };

@@ -36,6 +36,8 @@ const AndamentoList = (props) => {
         <Column field="dataHora" header="Data Hora" sortable filter></Column>
         <Column field="titulo" header="Título" sortable filter></Column>
         <Column field="descricao" header="Descrição" sortable filter></Column>
+        <Column field="atividade" header="Atividade" sortable filter></Column>
+        <Column field="colaborador" header="Colaborador" sortable filter></Column>
         <Column header="Operações" body={operacoesBodyTemplate}></Column>
       </DataTable>
     </div>

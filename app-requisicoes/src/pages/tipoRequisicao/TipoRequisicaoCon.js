@@ -90,7 +90,7 @@ function TipoRequisicaoCon() {
 
   const editar = (id) => {
     setTipoRequisicao(
-      tiposRequisicao.filter((tipoRequisicao) => tipoRequisicao._id == id)[0]
+      tiposRequisicao.filter((tipoRequisicao) => tipoRequisicao._id === id)[0]
     );
     setEditando(true);
   };

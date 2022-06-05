@@ -91,7 +91,7 @@ function RequisicaoCon() {
 
   const editar = (id) => {
     setRequisicao(
-      requisicoes.filter((requisicao) => requisicao._id == id)[0]
+      requisicoes.filter((requisicao) => requisicao._id === id)[0]
     );
     setEditando(true);
   };

@@ -90,7 +90,7 @@ function ColaboradorCon() {
 
   const editar = (id) => {
     setColaborador(
-      colaboradores.filter((colaborador) => colaborador._id == id)[0]
+      colaboradores.filter((colaborador) => colaborador._id === id)[0]
     );
     setEditando(true);
   };
