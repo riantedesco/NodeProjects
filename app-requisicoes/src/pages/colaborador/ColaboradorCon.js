@@ -22,13 +22,8 @@ function ColaboradorCon() {
 
   const onClickAtualizar = () => {
     ColaboradorSrv.listar().then((response) => {
-        setColaboradores(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Colaboradores Atualizados!",
-          life: 3000,
-        });
-      })
+      setColaboradores(response.data);
+    })
       .catch((e) => {
         console.log("Erro: " + e.message);
         toastRef.current.show({
@@ -45,6 +40,7 @@ function ColaboradorCon() {
   };
 
   const salvar = () => {
+    console.log(colaborador);
     if (colaborador._id == null) { // inclusão
       ColaboradorSrv.incluir(colaborador)
         .then((response) => {
@@ -133,6 +129,8 @@ function ColaboradorCon() {
         <ConfirmDialog />
         <ColaboradorList
           colaboradores={colaboradores}
+          colaborador={colaborador}
+          setColaborador={setColaborador}
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           editar={editar}

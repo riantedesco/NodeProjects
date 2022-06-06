@@ -22,13 +22,8 @@ function TipoRequisicaoCon() {
 
   const onClickAtualizar = () => {
     TipoRequisicaoSrv.listar().then((response) => {
-        setTiposRequisicao(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Tipos de Requisição Atualizados!",
-          life: 3000,
-        });
-      })
+      setTiposRequisicao(response.data);
+    })
       .catch((e) => {
         console.log("Erro: " + e.message);
         toastRef.current.show({
@@ -45,6 +40,7 @@ function TipoRequisicaoCon() {
   };
 
   const salvar = () => {
+    console.log(tipoRequisicao);
     if (tipoRequisicao._id == null) { // inclusão
       TipoRequisicaoSrv.incluir(tipoRequisicao)
         .then((response) => {
@@ -133,6 +129,8 @@ function TipoRequisicaoCon() {
         <ConfirmDialog />
         <TipoRequisicaoList
           tiposRequisicao={tiposRequisicao}
+          tipoRequisicao={tipoRequisicao}
+          setTipoRequisicao={setTipoRequisicao}
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           editar={editar}

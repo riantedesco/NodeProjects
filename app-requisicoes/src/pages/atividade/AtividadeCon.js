@@ -22,13 +22,8 @@ function AtividadeCon() {
 
   const onClickAtualizar = () => {
     AtividadeSrv.listar().then((response) => {
-        setAtividades(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Atividades Atualizadas!",
-          life: 3000,
-        });
-      })
+      setAtividades(response.data);
+    })
       .catch((e) => {
         console.log("Erro: " + e.message);
         toastRef.current.show({
@@ -134,6 +129,8 @@ function AtividadeCon() {
         <ConfirmDialog />
         <AtividadeList
           atividades={atividades}
+          atividade={atividade}
+          setAtividade={setAtividade}
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           editar={editar}

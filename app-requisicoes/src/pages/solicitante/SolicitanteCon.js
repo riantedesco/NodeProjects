@@ -22,13 +22,8 @@ function SolicitanteCon() {
 
   const onClickAtualizar = () => {
     SolicitanteSrv.listar().then((response) => {
-        setSolicitantes(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Solicitantes Atualizados!",
-          life: 3000,
-        });
-      })
+      setSolicitantes(response.data);
+    })
       .catch((e) => {
         console.log("Erro: " + e.message);
         toastRef.current.show({
@@ -45,6 +40,7 @@ function SolicitanteCon() {
   };
 
   const salvar = () => {
+    console.log(solicitante);
     if (solicitante._id == null) { // inclusão
       SolicitanteSrv.incluir(solicitante)
         .then((response) => {
@@ -133,6 +129,8 @@ function SolicitanteCon() {
         <ConfirmDialog />
         <SolicitanteList
           solicitantes={solicitantes}
+          solicitante={solicitante}
+          setSolicitante={setSolicitante}
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           editar={editar}

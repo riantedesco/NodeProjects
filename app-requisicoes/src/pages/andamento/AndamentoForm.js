@@ -3,12 +3,18 @@ import AtividadeSrv from "../atividade/AtividadeSrv";
 import ColaboradorSrv from "../colaborador/ColaboradorSrv"
 import { Calendar } from 'primereact/calendar';
 import { Dropdown } from 'primereact/dropdown';
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
+import { useForm } from "react-hook-form";
 
 const AndamentoForm = (props) => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     props.setAndamento({ ...props.andamento, [name]: value });
   };
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = data => { props.salvar(); }
 
   const [atividades, setAtividades] = useState([]);
   const [colaboradores, setColaboradores] = useState([]);
@@ -34,62 +40,73 @@ const AndamentoForm = (props) => {
   };
 
   return (
-    <form>
-      <div class="form-group">
-        <label>Data Hora</label>
-        <br></br>
-        <Calendar name="dataHora" value={props.andamento.dataHora} onChange={handleInputChange}></Calendar>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <div className="card">
+          <h5>Cadastro de Andamentos</h5>
+          <div className="p-fluid grid formgrid">
+
+            <div className="field col-12 md:col-4">
+              <label htmlFor="dataHora">Data e Hora</label>
+              <Calendar id="dataHora" name="dataHora" defaultValue={props.andamento.dataHora}
+                {...register("dataHora", {
+                  required: { value: true, message: "A data e hora são obrigatórias." }
+                })}
+                onChange={handleInputChange} />
+              {errors.dataHora && <span style={{ color: 'red' }}>{errors.dataHora.message}</span>}
+            </div>
+
+            <div className="field col-12 md:col-4">
+              <label htmlFor="titulo">Título</label>
+              <InputText id="titulo" name="titulo" defaultValue={props.andamento.titulo}
+                {...register("titulo", {
+                  required: { value: true, message: "O título é obrigatório." },
+                  minLength: { value: 5, message: "O título deve ter pelo menos 5 caracteres." },
+                  maxLength: { value: 100, message: "O título deve ter no máximo 100 caracteres." }
+                })}
+                onChange={handleInputChange} />
+              {errors.titulo && <span style={{ color: 'red' }}>{errors.titulo.message}</span>}
+            </div>
+
+            <div className="field col-12 md:col-4">
+              <label htmlFor="descricao">Descrição</label>
+              <InputText id="descricao" name="descricao" defaultValue={props.andamento.descricao}
+                {...register("descricao", {
+                  required: { value: true, message: "A descrição é obrigatória." },
+                  minLength: { value: 5, message: "A descrição deve ter pelo menos 5 caracteres." },
+                  maxLength: { value: 100, message: "A descrição deve ter no máximo 100 caracteres." }
+                })}
+                onChange={handleInputChange} />
+              {errors.descricao && <span style={{ color: 'red' }}>{errors.descricao.message}</span>}
+            </div>
+
+            <div className="field col-12 md:col-4">
+              <label htmlFor="atividade">Atividade</label>
+              <Dropdown id="atividade" name="atividade" defaultValue={props.andamento.atividade}
+                onChange={handleInputChange} options={atividades}
+                optionLabel="titulo" optionValue="_id" placeholder="Selecione uma atividade" />
+              {errors.atividade && <span style={{ color: 'red' }}>{errors.atividade.message}</span>}
+            </div>
+
+            <div className="field col-12 md:col-4">
+              <label htmlFor="colaborador">Colaborador</label>
+              <Dropdown id="colaborador" name="colaborador" defaultValue={props.andamento.colaborador}
+                onChange={handleInputChange} options={colaboradores}
+                optionLabel="nome" optionValue="_id" placeholder="Selecione um colaborador" />
+              {errors.colaborador && <span style={{ color: 'red' }}>{errors.colaborador.message}</span>}
+            </div>
+
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Título</label>
-        <input
-          class="form-control"
-          type="text"
-          name="titulo"
-          value={props.andamento.titulo}
-          onChange={handleInputChange}
-        />
+
+      <div>
+        <Button label="Salvar" icon="pi pi-save" type="submit"
+          className="p-button-secondary p-button-text" />
+        <Button label="Cancelar" icon="pi pi-times-circle" onClick={props.cancelar}
+          className="p-button-secondary p-button-text" />
       </div>
-      <div class="form-group">
-        <label>Descrição</label>
-        <input
-          class="form-control"
-          type="text"
-          name="descricao"
-          value={props.andamento.descricao}
-          onChange={handleInputChange}
-        />
-      </div>
-      <div class="form-group">
-        <label>Atividade</label>
-        <br></br>
-        <Dropdown name="atividade" value={props.andamento.atividade} options={atividades}
-          optionLabel="titulo" optionValue="_id"
-          onChange={handleInputChange} placeholder="Selecione uma atividade" />
-      </div>
-      <div class="form-group">
-        <label>Colaborador</label>
-        <br></br>
-        <Dropdown name="colaborador" value={props.andamento.colaborador} options={colaboradores}
-          optionLabel="nome" optionValue="_id"
-          onChange={handleInputChange} placeholder="Selecione um colaboador" />
-      </div>
-      <div class="form-group">
-        <button
-          type="button"
-          onClick={props.salvar}
-          className="btn btn-primary btn-sm"
-        >
-          Salvar
-        </button>
-        <button
-          type="button"
-          onClick={props.cancelar}
-          className="btn btn-primary btn-sm"
-        >
-          Cancelar
-        </button>
-      </div>
+
     </form>
   );
 };

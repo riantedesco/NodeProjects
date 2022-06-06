@@ -22,13 +22,8 @@ function RequisicaoCon() {
 
   const onClickAtualizar = () => {
     RequisicaoSrv.listar().then((response) => {
-        setRequisicoes(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Requisições Atualizadas!",
-          life: 3000,
-        });
-      })
+      setRequisicoes(response.data);
+    })
       .catch((e) => {
         console.log("Erro: " + e.message);
         toastRef.current.show({
@@ -134,6 +129,8 @@ function RequisicaoCon() {
         <ConfirmDialog />
         <RequisicaoList
           requisicoes={requisicoes}
+          requisicao={requisicao}
+          setRequisicao={setRequisicao}
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           editar={editar}

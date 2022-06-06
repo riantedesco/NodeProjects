@@ -22,13 +22,8 @@ function AndamentoCon() {
 
   const onClickAtualizar = () => {
     AndamentoSrv.listar().then((response) => {
-        setAndamentos(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Andamentos Atualizados!",
-          life: 3000,
-        });
-      })
+      setAndamentos(response.data);
+    })
       .catch((e) => {
         console.log("Erro: " + e.message);
         toastRef.current.show({
@@ -134,6 +129,8 @@ function AndamentoCon() {
         <ConfirmDialog />
         <AndamentoList
           andamentos={andamentos}
+          andamento={andamento}
+          setAndamento={setAndamento}
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           editar={editar}

@@ -1,37 +1,40 @@
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
+import { Button } from 'primereact/button';
 
 const AndamentoList = (props) => {
   const operacoesBodyTemplate = (rowData) => {
     return (
       <>
-        <button
-          onClick={() => props.editar(rowData._id)}
-          className="btn btn-warning btn-sm">Editar</button>
-        <button
-          onClick={() => props.excluir(rowData._id)}
-          className="btn btn-danger btn-sm">Excluir</button>
+        <Button type="button" icon="pi pi-pencil" className="p-button-rounded p-button-text "
+          onClick={() => props.editar(rowData._id)}></Button>
+        <Button type="button" icon="pi pi-trash" className="p-button-rounded p-button-text"
+          onClick={() => { props.excluir(rowData._id); }}></Button>
       </>
     )
   }
 
+  const header = (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      Listagem de Andamentos
+      <Button icon="pi pi-file-o" label="Inserir" className="p-button-sm" onClick={() => props.inserir()} />
+    </div>
+  );
+
+  const footer = `Total de itens: ${props.andamentos ? props.andamentos.length : 0}`;
+
   return (
     <div className="App">
-      <h4>Listagem de Andamentos</h4>
-      <button
-        className="btn btn-primary btn-sm"
-        onClick={props.onClickAtualizar}
+
+      {/* Montando uma tabela com datatable  */}
+      <DataTable value={props.andamentos} responsiveLayout="scroll" header={header} footer={footer}
+        paginator className="p-datatable-sm" paginatorPosition="top"
+        paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown CurrentPageReport"
+        currentPageReportTemplate="Mostrando de {first} até {last} de {totalRecords}"
+        rows={5} rowsPerPageOptions={[5, 10, 20, 50]}
+        emptyMessage="Nenhum andamento encontrado."
+        selectionMode="single" selection={props.andamento} onSelectionChange={e => props.setAndamento(e.value)} dataKey="_id"
       >
-        Atualizar Lista
-      </button>
-
-      <button className="btn btn-success btn-sm" onClick={props.inserir}>
-        Inserir
-      </button>
-
-      <DataTable value={props.andamentos} paginator paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown" currentPageReportTemplate="Mostrando de {first} até {last} de {totalRecords}" rows={5} rowsPerPageOptions={[5, 10, 20, 50]}
-        responsiveLayout="scroll" emptyMessage="Nenhum andamento encontrado"
-        selectionMode="single" selection={props.andamento} onSelectionChange={e => props.setAndamento(e.value)} dataKey="_id">
         <Column field="_id" header="Id" sortable></Column>
         <Column field="dataHora" header="Data Hora" sortable filter></Column>
         <Column field="titulo" header="Título" sortable filter></Column>
@@ -40,6 +43,7 @@ const AndamentoList = (props) => {
         <Column field="colaborador" header="Colaborador" sortable filter></Column>
         <Column header="Operações" body={operacoesBodyTemplate}></Column>
       </DataTable>
+
     </div>
   );
 };
