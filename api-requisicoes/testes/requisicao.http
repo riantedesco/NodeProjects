@@ -1,5 +1,5 @@
 @apiUrl = http://localhost:5000/api/requisicoes
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjlhOTczNWFhMjhjZmQwNjFjNmI4NTkiLCJub21lIjoiSmFxc29uIGFsdGVyYWRvIiwiaWF0IjoxNjU0MzAwMTc5LCJleHAiOjE2NTQzMDM3Nzl9.KqwInBnvY_dlGaK4tfeebxaq5cXEfVLgKYFufyEP7Ew
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzZmQxMjM1MDJlZWI4NjBhZjUxNmYiLCJub21lIjoiUmlhbiBUZWRlc2NvIiwiaWF0IjoxNjU0OTE1MDUxLCJleHAiOjE2NTQ5MTg2NTF9.AcsL6FN6iJT_iNL1FkVVKbrKukGGvFd4C8ArYqlLFWU
 
 
 # Obter a lista de requisicoes
@@ -15,13 +15,21 @@ Content-Type: application/json
 x-auth-token: {{authToken}}
 
 {
- "titulo": "Requisicao 3",
- "descricao": "Descricao da requisicao 1",
+ "titulo": "Requisicao 4",
+ "descricao": "Descricao da requisicao 4",
  "dataHoraCriada": "2022-05-20",
- "status": "Aguardando",
+ "status": "Aberto",
  "prazoAtendimento": "2022-05-20",
- "tipoRequisicao": "5f6cba8798eca62ccce84ba7",
- "solicitante": "5f6cba8798eca62ccce84ba7"
+ "tipoRequisicao": {
+     "_id": "62a3fe6b68d91ea466e26d54",
+     "descricao": "Tipo 1"
+ } ,
+ "solicitante": {
+     "_id": "62a3fe5368d91ea466e26d4d",
+     "nome": "Solicitante 1",
+     "email": "solicitante1@email.com",
+     "senha": "12345"
+ }
 }
 ###
 

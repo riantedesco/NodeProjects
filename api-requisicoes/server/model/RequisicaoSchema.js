@@ -18,4 +18,4 @@ const RequisicaoSchema = new mongoose.Schema({
     },
 });
 
-module.exports = mongoose.model("RequisicaoSchema", RequisicaoSchema);
+module.exports = mongoose.model("Requisicao", RequisicaoSchema);

@@ -1,5 +1,5 @@
 @apiUrl = http://localhost:5000/api/colaboradores
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjlhOTczNWFhMjhjZmQwNjFjNmI4NTkiLCJub21lIjoiSmFxc29uIGFsdGVyYWRvIiwiaWF0IjoxNjU0MzAwMTc5LCJleHAiOjE2NTQzMDM3Nzl9.KqwInBnvY_dlGaK4tfeebxaq5cXEfVLgKYFufyEP7Ew
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzZmQxMjM1MDJlZWI4NjBhZjUxNmYiLCJub21lIjoiUmlhbiBUZWRlc2NvIiwiaWF0IjoxNjU0OTE1MDUxLCJleHAiOjE2NTQ5MTg2NTF9.AcsL6FN6iJT_iNL1FkVVKbrKukGGvFd4C8ArYqlLFWU
 
 
 # Obter a lista de colaboradores
@@ -17,7 +17,7 @@ x-auth-token: {{authToken}}
 {
  "nome": "Rian Tedesco",
  "email": "rian@upf.br",
- "senha": "123"
+ "senha": "12345"
 }
 ###
 
@@ -44,7 +44,7 @@ x-auth-token: {{authToken}}
 
 
 # Obter pelo id de colaborador
-GET {{apiUrl}}/623526a2042f9a3f225e5fe0
+GET {{apiUrl}}/5f6cba8798eca62ccce84ba7
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###
@@ -88,7 +88,7 @@ POST http://localhost:5000/api/login
 Content-Type: application/json
 
 {
-    "email": "jaqson@teste2.com",
+    "email": "rian@upf.br",
     "senha": "12345"
 }
 ###

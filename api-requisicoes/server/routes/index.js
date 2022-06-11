@@ -9,7 +9,7 @@ routes.use(cors({ origin: '*' }));
 const loginRout = require("./LoginRout");
 routes.use("/api", loginRout);
 const jwt = require("jsonwebtoken");
-/*
+
 routes.use(function (req, res, next) { // interceptar as requisições a validar o token
     try {
         const token = req.header("x-auth-token");
@@ -26,7 +26,7 @@ routes.use(function (req, res, next) { // interceptar as requisições a validar
             next();
         });
     } catch (error) { res.status(400).send("Erro no token de autenticação!"); }
-}); */
+});
 
 const colaboradorRout = require("./ColaboradorRout");
 routes.use("/api", colaboradorRout);

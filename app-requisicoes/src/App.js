@@ -2,7 +2,8 @@ import "./App.css";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
-import React, { Suspense, lazy } from "react";
+import LoginForm from "./pages/login/LoginForm";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Menu from './Menu';
 
@@ -15,18 +16,27 @@ const AtividadeCon = lazy(() => import('./pages/atividade/AtividadeCon'));
 const AndamentoCon = lazy(() => import('./pages/andamento/AndamentoCon'));
 
 function App() {
+  // return <LoginForm />
+  const [token, setToken] = useState([])
+  useEffect(() => {
+    setToken(sessionStorage.getItem('token'));
+  }, []);
+  if (!token || token <= '') {
+    return <LoginForm />
+  }
+
   return (
     <BrowserRouter>
-      <Menu/>
+      <Menu />
       <Suspense fallback={<div>Carregando... </div>}>
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/colaborador" element={<ColaboradorCon/>}/>
-          <Route path="/solicitante" element={<SolicitanteCon/>}/>
-          <Route path="/tipoRequisicao" element={<TipoRequisicaoCon/>}/>
-          <Route path="/requisicao" element={<RequisicaoCon/>}/>
-          <Route path="/atividade" element={<AtividadeCon/>}/>
-          <Route path="/andamento" element={<AndamentoCon/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/colaborador" element={<ColaboradorCon />} />
+          <Route path="/solicitante" element={<SolicitanteCon />} />
+          <Route path="/tipoRequisicao" element={<TipoRequisicaoCon />} />
+          <Route path="/requisicao" element={<RequisicaoCon />} />
+          <Route path="/atividade" element={<AtividadeCon />} />
+          <Route path="/andamento" element={<AndamentoCon />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

@@ -1,0 +1,2 @@
+> Entidades salvando atributos de chave estrangeira de forma errada
+> Validação do front bugada pra Dropdown e Calendar
