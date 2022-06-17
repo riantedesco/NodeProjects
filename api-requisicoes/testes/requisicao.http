@@ -1,5 +1,5 @@
 @apiUrl = http://localhost:5000/api/requisicoes
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzZmQxMjM1MDJlZWI4NjBhZjUxNmYiLCJub21lIjoiUmlhbiBUZWRlc2NvIiwiaWF0IjoxNjU0OTE1MDUxLCJleHAiOjE2NTQ5MTg2NTF9.AcsL6FN6iJT_iNL1FkVVKbrKukGGvFd4C8ArYqlLFWU
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzZmQxMjM1MDJlZWI4NjBhZjUxNmYiLCJub21lIjoiUmlhbiBUZWRlc2NvIiwiaWF0IjoxNjU1NTA2NDg0LCJleHAiOjE2NTU1MTAwODR9.6YuEWkZ7jyhgaa29zSliQ7WFj6v-NKEsQ4M4muY2CVM
 
 
 # Obter a lista de requisicoes
@@ -15,21 +15,13 @@ Content-Type: application/json
 x-auth-token: {{authToken}}
 
 {
- "titulo": "Requisicao 4",
- "descricao": "Descricao da requisicao 4",
+ "titulo": "Requisicao um",
+ "descricao": "Descricao da requisicao um",
  "dataHoraCriada": "2022-05-20",
  "status": "Aberto",
  "prazoAtendimento": "2022-05-20",
- "tipoRequisicao": {
-     "_id": "62a3fe6b68d91ea466e26d54",
-     "descricao": "Tipo 1"
- } ,
- "solicitante": {
-     "_id": "62a3fe5368d91ea466e26d4d",
-     "nome": "Solicitante 1",
-     "email": "solicitante1@email.com",
-     "senha": "12345"
- }
+ "tipoRequisicao": "62a3fe6b68d91ea466e26d54",
+ "solicitante": "62a3fe5368d91ea466e26d4d"
 }
 ###
 
@@ -41,9 +33,10 @@ x-auth-token: {{authToken}}
 
 {
  "_id": "5f6cba8798eca62ccce84ba7",
- "titulo": "Requisicao 1",
- "descricao": "Descricao da requisicao 1",
- "status": "Aguardando",
+ "titulo": "Requisicao dois",
+ "descricao": "Descricao da requisicao dois",
+ "dataHoraCriada": "2022-05-20",
+ "status": "Cancelado",
  "prazoAtendimento": "2021-01-25T17:32:25.000Z"
 }
 ###
@@ -57,14 +50,14 @@ x-auth-token: {{authToken}}
 
 
 # Obter pelo id de requisicao
-GET {{apiUrl}}/5f6cba8798eca62ccce84ba7
+GET {{apiUrl}}/62ace9d22be76e3e0f3e36dc
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###
 
 
 # Obter requisicoes filtrando
-GET {{apiUrl}}/filtro/alterado
+GET {{apiUrl}}/filtro/dois
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###
@@ -76,9 +69,8 @@ Content-Type: application/json
 x-auth-token: {{authToken}}
 
 {
- "titulo": "Requisicao 1",
+ "titulo": "Requisicao 6",
  "descricao": "Descricao da requisicao 1",
- "dataHoraCriada": "2021-01-25T17:32:25.000Z",
  "status": "Aguardando",
  "prazoAtendimento": "2021-01-25T17:32:25.000Z",
  "tipoRequisicao": "5f6cba8798eca62ccce84ba7",

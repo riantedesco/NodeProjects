@@ -49,9 +49,10 @@ const AndamentoForm = (props) => {
             <div className="field col-12 md:col-4">
               <label htmlFor="dataHora">Data e Hora</label>
               <Calendar id="dataHora" name="dataHora" defaultValue={props.andamento.dataHora}
-                {...register("dataHora", {
-                  required: { value: true, message: "A data e hora são obrigatórias." }
-                })}
+                // {...register("dataHora", {
+                //   required: { value: true, message: "A data e hora são obrigatórias." }
+                // })}
+                // A validação precisa acontecer de maneira diferente de imput
                 onChange={handleInputChange} />
               {errors.dataHora && <span style={{ color: 'red' }}>{errors.dataHora.message}</span>}
             </div>
@@ -82,7 +83,7 @@ const AndamentoForm = (props) => {
 
             <div className="field col-12 md:col-4">
               <label htmlFor="atividade">Atividade</label>
-              <Dropdown id="atividade" name="atividade" defaultValue={props.andamento.atividade}
+              <Dropdown id="atividade" name="atividade" value={props.andamento.atividade}
                 onChange={handleInputChange} options={atividades}
                 optionLabel="titulo" optionValue="_id" placeholder="Selecione uma atividade" />
               {errors.atividade && <span style={{ color: 'red' }}>{errors.atividade.message}</span>}
@@ -90,7 +91,7 @@ const AndamentoForm = (props) => {
 
             <div className="field col-12 md:col-4">
               <label htmlFor="colaborador">Colaborador</label>
-              <Dropdown id="colaborador" name="colaborador" defaultValue={props.andamento.colaborador}
+              <Dropdown id="colaborador" name="colaborador" value={props.andamento.colaborador}
                 onChange={handleInputChange} options={colaboradores}
                 optionLabel="nome" optionValue="_id" placeholder="Selecione um colaborador" />
               {errors.colaborador && <span style={{ color: 'red' }}>{errors.colaborador.message}</span>}

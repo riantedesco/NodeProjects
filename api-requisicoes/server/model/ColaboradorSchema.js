@@ -3,8 +3,15 @@ const jwt = require("jsonwebtoken");
 
 const ColaboradorSchema = new mongoose.Schema({
     nome: { type: String, required: true },
-    email: { type: String, unique:true },
-    senha: { type: String },
+    email: { 
+        type: String, 
+        unique:true,
+        // required: true
+    },
+    senha: { 
+        type: String,
+        // required: true
+    },
 });
 
 ColaboradorSchema.methods.generateAuthToken = function () {

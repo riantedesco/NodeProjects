@@ -1,5 +1,5 @@
 @apiUrl = http://localhost:5000/api/tiposRequisicao
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzZmQxMjM1MDJlZWI4NjBhZjUxNmYiLCJub21lIjoiUmlhbiBUZWRlc2NvIiwiaWF0IjoxNjU0OTE1MDUxLCJleHAiOjE2NTQ5MTg2NTF9.AcsL6FN6iJT_iNL1FkVVKbrKukGGvFd4C8ArYqlLFWU
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzZmQxMjM1MDJlZWI4NjBhZjUxNmYiLCJub21lIjoiUmlhbiBUZWRlc2NvIiwiaWF0IjoxNjU1NTA2NDg0LCJleHAiOjE2NTU1MTAwODR9.6YuEWkZ7jyhgaa29zSliQ7WFj6v-NKEsQ4M4muY2CVM
 
 
 # Obter a lista de tipos de requisicao
@@ -15,7 +15,7 @@ Content-Type: application/json
 x-auth-token: {{authToken}}
 
 {
- "descricao": "tipo 1"
+ "descricao": "Tipo um"
 }
 ###
 
@@ -27,7 +27,7 @@ x-auth-token: {{authToken}}
 
 {
  "_id": "624782763de4296a7e54b75a",
- "descricao": "Tipo 2"
+ "descricao": "Tipo dois"
 }
 ###
 
@@ -47,7 +47,7 @@ x-auth-token: {{authToken}}
 
 
 # Obter tipos de requisicao filtrando
-GET {{apiUrl}}/filtro/1
+GET {{apiUrl}}/filtro/dois
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###

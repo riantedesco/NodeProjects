@@ -42,8 +42,8 @@ const AtividadeList = (props) => {
         <Column field="prazo" header="Prazo" sortable filter></Column>
         <Column field="agendaInicio" header="Agenda Início" sortable filter></Column>
         <Column field="dataHoraTermino" header="Data Hora Término" sortable filter></Column>
-        <Column field="requisicao" header="Requisição" sortable filter></Column>
-        <Column field="colaborador" header="Colaborador" sortable filter></Column>
+        <Column field="requisicao.titulo" header="Requisição" sortable filter></Column>
+        <Column field="colaborador.nome" header="Colaborador" sortable filter></Column>
         <Column header="Operações" body={operacoesBodyTemplate}></Column>
       </DataTable>
 

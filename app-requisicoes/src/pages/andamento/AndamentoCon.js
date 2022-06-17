@@ -11,7 +11,7 @@ import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
 function AndamentoCon() {
   const [andamentos, setAndamentos] = useState([]);
-  const initialState = { id: null, dataHora: "", titulo: "", descricao: "" };
+  const initialState = { id: null, dataHora: "", titulo: "", descricao: "", requisicao: null, colaborador: null };
   const [andamento, setAndamento] = useState(initialState);
   const [editando, setEditando] = useState(false);
   const toastRef = useRef();

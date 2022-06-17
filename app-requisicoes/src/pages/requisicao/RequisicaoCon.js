@@ -11,7 +11,7 @@ import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
 function RequisicaoCon() {
   const [requisicoes, setRequisicoes] = useState([]);
-  const initialState = { id: null, titulo: "", descricao: "", dataHoraCriada: "", status: "", prazoAtendimento: "" };
+  const initialState = { id: null, titulo: "", descricao: "", dataHoraCriada: "", status: "", prazoAtendimento: "", tipoRequisicao: null, solicitante: null };
   const [requisicao, setRequisicao] = useState(initialState);
   const [editando, setEditando] = useState(false);
   const toastRef = useRef();

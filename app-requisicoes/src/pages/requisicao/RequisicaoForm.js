@@ -37,7 +37,7 @@ const RequisicaoForm = (props) => {
       .catch((e) => {
         console.log("Erro: " + e.message);
       });
-      
+
     SolicitanteSrv.listar().then((response) => {
       setSolicitantes(response.data);
     })
@@ -80,37 +80,40 @@ const RequisicaoForm = (props) => {
             <div className="field col-12 md:col-4">
               <label htmlFor="dataHoraCriada">Data e Hora Criação</label>
               <Calendar id="dataHoraCriada" name="dataHoraCriada" defaultValue={props.requisicao.dataHoraCriada}
-                {...register("dataHoraCriada", {
-                  required: { value: true, message: "A data e hora de criação são obrigatórias." }
-                })}
+                // {...register("dataHoraCriada", {
+                //   required: { value: true, message: "A data e hora de criação são obrigatórias." }
+                // })}
+                // A validação precisa acontecer de maneira diferente de imput
                 onChange={handleInputChange} />
               {errors.dataHoraCriada && <span style={{ color: 'red' }}>{errors.dataHoraCriada.message}</span>}
             </div>
 
             <div className="field col-12 md:col-4">
               <label htmlFor="status">Status</label>
-              <Dropdown id="status" name="status" defaultValue={props.requisicao.status}
-                {...register("status", {
-                  required: { value: true, message: "O status é obrigatório." }
-                })}
-                onChange={handleInputChange} options={statusSelectItems} 
-                placeholder="Selecione um status"/>
+              <Dropdown id="status" name="status" value={props.requisicao.status}
+                // {...register("status", {
+                //   required: { value: true, message: "O status é obrigatório." }
+                // })}
+                // A validação precisa acontecer de maneira diferente de imput
+                onChange={handleInputChange} options={statusSelectItems}
+                placeholder="Selecione um status" />
               {errors.status && <span style={{ color: 'red' }}>{errors.status.message}</span>}
             </div>
 
             <div className="field col-12 md:col-4">
               <label htmlFor="prazoAtendimento">Prazo de Atendimento</label>
               <Calendar id="prazoAtendimento" name="prazoAtendimento" defaultValue={props.requisicao.prazoAtendimento}
-                {...register("prazoAtendimento", {
-                  required: { value: true, message: "O prazo de atendimento é obrigatório." }
-                })}
+                // {...register("prazoAtendimento", {
+                //   required: { value: true, message: "O prazo de atendimento é obrigatório." }
+                // })}
+                // A validação precisa acontecer de maneira diferente de imput
                 onChange={handleInputChange} />
               {errors.prazoAtendimento && <span style={{ color: 'red' }}>{errors.prazoAtendimento.message}</span>}
             </div>
 
             <div className="field col-12 md:col-4">
               <label htmlFor="tipoRequisicao">Tipo de Requisição</label>
-              <Dropdown id="tipoRequisicao" name="tipoRequisicao" defaultValue={props.requisicao.tipoRequisicao}
+              <Dropdown id="tipoRequisicao" name="tipoRequisicao" value={props.requisicao.tipoRequisicao}
                 onChange={handleInputChange} options={tiposRequisicao}
                 optionLabel="descricao" optionValue="_id" placeholder="Selecione um tipo de requisição" />
               {errors.tipoRequisicao && <span style={{ color: 'red' }}>{errors.tipoRequisicao.message}</span>}
@@ -118,7 +121,7 @@ const RequisicaoForm = (props) => {
 
             <div className="field col-12 md:col-4">
               <label htmlFor="solicitante">Solicitante</label>
-              <Dropdown id="solicitante" name="solicitante" defaultValue={props.requisicao.solicitante}
+              <Dropdown id="solicitante" name="solicitante" value={props.requisicao.solicitante}
                 onChange={handleInputChange} options={solicitantes}
                 optionLabel="nome" optionValue="_id" placeholder="Selecione um solicitante" />
               {errors.solicitante && <span style={{ color: 'red' }}>{errors.solicitante.message}</span>}
@@ -135,7 +138,7 @@ const RequisicaoForm = (props) => {
           className="p-button-secondary p-button-text" />
       </div>
 
-    </form> 
+    </form>
   );
 };
 

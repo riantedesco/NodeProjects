@@ -1,2 +1,5 @@
-> Entidades salvando atributos de chave estrangeira de forma errada
-> Validação do front bugada pra Dropdown e Calendar
+> Validação do front pelo register tá bugado pra Dropdown e Calendar (aparece erro de required mesmo com o campo preenchido)
+
+> Ao editar o form de colaborador ele puxa a senha criptografada, não sendo possível digitar a contra-senha e salvar
+
+> Ao editar forms com Calendar e Dropdown (apenas de chave estrangeira) ele não puxa na tela o valor desses campos

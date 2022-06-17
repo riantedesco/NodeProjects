@@ -7,12 +7,12 @@ const AndamentoSchema = new mongoose.Schema({
     atividade: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Atividade',
-        //require: true,
+        //required: true,
     },
     colaborador: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Colaborador',
-        //require: true,
+        //required: true,
     },
 });
 

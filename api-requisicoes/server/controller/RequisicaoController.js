@@ -4,7 +4,7 @@ module.exports = {
     listar: async (req, res) => {
         Requisicao.find((err, objetos) => {
             (err ? res.status(400).send(err) : res.status(200).json(objetos));
-        }).populate('tipoRequisicao', 'solicitante').sort({ titulo: 1 }); // -1: decrescente  1: crescente
+        }).populate('tipoRequisicao').populate('solicitante').sort({ titulo: 1 }); // -1: decrescente  1: crescente
     },
 
     incluir: async (req, res) => {

@@ -1,6 +1,5 @@
 @apiUrl = http://localhost:5000/api/solicitantes
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzZmQxMjM1MDJlZWI4NjBhZjUxNmYiLCJub21lIjoiUmlhbiBUZWRlc2NvIiwiaWF0IjoxNjU0OTE1MDUxLCJleHAiOjE2NTQ5MTg2NTF9.AcsL6FN6iJT_iNL1FkVVKbrKukGGvFd4C8ArYqlLFWU
-
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzZmQxMjM1MDJlZWI4NjBhZjUxNmYiLCJub21lIjoiUmlhbiBUZWRlc2NvIiwiaWF0IjoxNjU1NTA2NDg0LCJleHAiOjE2NTU1MTAwODR9.6YuEWkZ7jyhgaa29zSliQ7WFj6v-NKEsQ4M4muY2CVM
 
 # Obter a lista de solicitantes
 GET {{apiUrl}}
@@ -15,9 +14,9 @@ Content-Type: application/json
 x-auth-token: {{authToken}}
 
 {
- "nome": "Jaqson Dalbosco",
- "email": "jaqson@upf.br",
- "senha": "123"
+ "nome": "Solicitante um",
+ "email": "solicitanteum@upf.br",
+ "senha": "12345"
 }
 ###
 
@@ -29,8 +28,9 @@ x-auth-token: {{authToken}}
 
 {
  "_id": "5f6cba8798eca62ccce84ba7",
- "nome": "Jaqson alterado",
- "email": "jaqson@teste.com"
+ "nome": "Solicitante dois",
+ "email": "solicitantedois@teste.com",
+ "senha": "12345"
 }
 ###
 
@@ -50,7 +50,7 @@ x-auth-token: {{authToken}}
 
 
 # Obter solicitantes filtrando
-GET {{apiUrl}}/filtro/alterado
+GET {{apiUrl}}/filtro/dois
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###

@@ -1,5 +1,5 @@
 @apiUrl = http://localhost:5000/api/atividades
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzZmQxMjM1MDJlZWI4NjBhZjUxNmYiLCJub21lIjoiUmlhbiBUZWRlc2NvIiwiaWF0IjoxNjU0OTE1MDUxLCJleHAiOjE2NTQ5MTg2NTF9.AcsL6FN6iJT_iNL1FkVVKbrKukGGvFd4C8ArYqlLFWU
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzZmQxMjM1MDJlZWI4NjBhZjUxNmYiLCJub21lIjoiUmlhbiBUZWRlc2NvIiwiaWF0IjoxNjU1NDk4MzMzLCJleHAiOjE2NTU1MDE5MzN9.KxzjjfWYcOkttGD484aBukoyDs9ufHk9zelnwP86IjU
 
 
 # Obter a lista de atividades
@@ -15,8 +15,8 @@ Content-Type: application/json
 x-auth-token: {{authToken}}
 
 {
- "titulo": "Requisicao dsfdfdsffeferfefefwfa",
- "descricao": "Descricao da requisicao 1",
+ "titulo": "Atividade um",
+ "descricao": "Descricao da atividade um",
  "status": "Aguardando",
  "prazo": "2021-01-25T17:32:25.000Z",
  "agendaInicio": "2021-01-25T17:32:25.000Z",
@@ -34,8 +34,8 @@ x-auth-token: {{authToken}}
 
 {
  "_id": "5f6cba8798eca62ccce84ba7",
- "titulo": "Requisicao 1",
- "descricao": "Descricao da requisicao 1",
+ "titulo": "Atividade dois",
+ "descricao": "Descricao da atividade dois",
  "status": "Aguardando",
  "prazo": "2021-01-25T17:32:25.000Z",
  "agendaInicio": "2021-01-25T17:32:25.000Z",
@@ -59,7 +59,7 @@ x-auth-token: {{authToken}}
 
 
 # Obter atividades filtrando
-GET {{apiUrl}}/filtro/alterado
+GET {{apiUrl}}/filtro/dois
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###

@@ -79,10 +79,11 @@ const AtividadeForm = (props) => {
 
             <div className="field col-12 md:col-4">
               <label htmlFor="status">Status</label>
-              <Dropdown id="status" name="status" defaultValue={props.atividade.status}
-                {...register("status", {
-                  required: { value: true, message: "O status é obrigatório." }
-                })}
+              <Dropdown id="status" name="status" value={props.atividade.status}
+                // {...register("status", {
+                //   required: { value: true, message: "O status é obrigatório." }
+                // })}
+                // A validação precisa acontecer de maneira diferente de imput
                 onChange={handleInputChange} options={statusSelectItems} 
                 placeholder="Selecione um status"/>
               {errors.status && <span style={{ color: 'red' }}>{errors.status.message}</span>}
@@ -91,9 +92,10 @@ const AtividadeForm = (props) => {
             <div className="field col-12 md:col-4">
               <label htmlFor="prazo">Prazo</label>
               <Calendar id="prazo" name="prazo" defaultValue={props.atividade.prazo}
-                {...register("prazo", {
-                  required: { value: true, message: "O prazo é obrigatório." }
-                })}
+                // {...register("prazo", {
+                //   required: { value: true, message: "O prazo é obrigatório." }
+                // })}
+                // A validação precisa acontecer de maneira diferente de imput
                 onChange={handleInputChange} />
               {errors.prazo && <span style={{ color: 'red' }}>{errors.prazo.message}</span>}
             </div>
@@ -101,9 +103,10 @@ const AtividadeForm = (props) => {
             <div className="field col-12 md:col-4">
               <label htmlFor="agendaInicio">Agenda início</label>
               <Calendar id="agendaInicio" name="agendaInicio" defaultValue={props.atividade.agendaInicio}
-                {...register("agendaInicio", {
-                  required: { value: true, message: "A agenda início é obrigatória." }
-                })}
+                // {...register("agendaInicio", {
+                //   required: { value: true, message: "A agenda início é obrigatória." }
+                // })}
+                // A validação precisa acontecer de maneira diferente de imput
                 onChange={handleInputChange} />
               {errors.agendaInicio && <span style={{ color: 'red' }}>{errors.agendaInicio.message}</span>}
             </div>
@@ -111,16 +114,17 @@ const AtividadeForm = (props) => {
             <div className="field col-12 md:col-4">
               <label htmlFor="dataHoraTermino">Data e Hora Término</label>
               <Calendar id="dataHoraTermino" name="dataHoraTermino" defaultValue={props.atividade.dataHoraTermino}
-                {...register("dataHoraTermino", {
-                  required: { value: true, message: "A data e hora do término são obrigatórias." }
-                })}
+                // {...register("dataHoraTermino", {
+                //   required: { value: true, message: "A data e hora do término são obrigatórias." }
+                // })}
+                // A validação precisa acontecer de maneira diferente de imput
                 onChange={handleInputChange} />
               {errors.dataHoraTermino && <span style={{ color: 'red' }}>{errors.dataHoraTermino.message}</span>}
             </div>
 
             <div className="field col-12 md:col-4">
               <label htmlFor="requisicao">Requisição</label>
-              <Dropdown id="requisicao" name="requisicao" defaultValue={props.atividade.requisicao}
+              <Dropdown id="requisicao" name="requisicao" value={props.atividade.requisicao}
                 onChange={handleInputChange} options={requisicoes}
                 optionLabel="titulo" optionValue="_id" placeholder="Selecione uma requisição" />
               {errors.requisicao && <span style={{ color: 'red' }}>{errors.requisicao.message}</span>}
@@ -128,7 +132,7 @@ const AtividadeForm = (props) => {
 
             <div className="field col-12 md:col-4">
               <label htmlFor="colaborador">Colaborador</label>
-              <Dropdown id="colaborador" name="colaborador" defaultValue={props.andamento.colaborador}
+              <Dropdown id="colaborador" name="colaborador" value={props.atividade.colaborador}
                 onChange={handleInputChange} options={colaboradores}
                 optionLabel="nome" optionValue="_id" placeholder="Selecione um colaborador" />
               {errors.colaborador && <span style={{ color: 'red' }}>{errors.colaborador.message}</span>}

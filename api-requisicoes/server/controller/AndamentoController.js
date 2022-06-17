@@ -4,7 +4,7 @@ module.exports = {
     listar: async (req, res) => {
         Andamento.find((err, objetos) => {
             (err ? res.status(400).send(err) : res.status(200).json(objetos));
-        }).populate('atividade', 'colaborador').sort({ titulo: 1 }); // -1: decrescente  1: crescente
+        }).populate('atividade').populate('colaborador').sort({ titulo: 1 }); // -1: decrescente  1: crescente
     },
 
     incluir: async (req, res) => {
