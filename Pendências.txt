@@ -3,3 +3,5 @@
 > Ao editar o form de colaborador ele puxa a senha criptografada, não sendo possível digitar a contra-senha e salvar
 
 > Ao editar forms com Calendar e Dropdown (apenas de chave estrangeira) ele não puxa na tela o valor desses campos
+
+> Cadastro

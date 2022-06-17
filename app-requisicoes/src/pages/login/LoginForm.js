@@ -39,7 +39,7 @@ const LoginForm = (props) => {
             <Toast ref={toastRef} />
             <div>
             <div className="card" style={{ width: '200px', textAlign: "center", marginLeft: '40%', marginTop: '15%' }}>
-                <h5>AUTENTICAÇÃO</h5>
+                <h5>Login</h5>
                 <br></br>
                 <div className="p-fluid grid formgrid">
                     <div className="field col-12 md:col-4">
